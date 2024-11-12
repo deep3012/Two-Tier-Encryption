@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bgimg.jpg'); /* Replace 'background.jpg' with your image */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #00ff40;
+    font-size: 50px;
+    margin-top: 70px;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container,
+.output-container {
+    width: 45%; 
+    color: #ffffff;/* Adjust as needed */
+}
+
+label {
+    font-weight: bold;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-family: Arial, sans-serif; /* Change the font family as needed */
+}
+
+/*  */
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+}
+
+button {
+    width: auto; /* Adjust the width as needed */
+    padding: 10px 20px; /* Adjust the padding as needed */
+    border: none;
+    border-radius: 20px;
+    background-color: #b21a1a; /* Green color */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif; /* Change the font family as needed */
+}
+
+
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000; /* Darker green color on hover */
+}
+
+
+/*======================Mobile=======================*/
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bgimg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #00ff40;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    color: hsl(0, 0%, 94%);
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container,
+.output-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #b21a1a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #000000;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 800px;
+    }
+
+    .form-container {
+        flex-wrap: nowrap;
+    }
+
+    .input-container,
+    .output-container {
+        width: 45%;
+    }
+}

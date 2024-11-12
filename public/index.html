@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Quantum Encryption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Post-Quantum Cryptography</h1>
+        <p>Post-quantum cryptography (PQC) aims to counter quantum computers' threat to traditional cryptographic systems by utilizing challenging mathematical problems like lattice-based cryptography and code-based cryptography. These techniques, although requiring larger key sizes, promise long-term security against quantum attacks.</p>
+        <div class="form-container">
+            <div class="input-container">
+                <label for="inputText">Input Text:</label><br>
+                <textarea id="inputText" name="inputText" rows="4" cols="30"></textarea>
+            </div>
+            <div class="output-container">
+                <label for="aesEncryptedText">AES Encrypted Text:</label><br>
+                <textarea id="aesEncryptedText" name="aesEncryptedText" rows="4" cols="30" readonly></textarea><br><br>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="encryptText()">Encrypt</button>
+        </div>
+    </div>
+    <script>
+        function encryptText() {
+            const inputText = document.getElementById('inputText').value;
+            fetch('http://localhost:3001/encrypt', { // Update the port here
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: new URLSearchParams({ inputText })
+})
+
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        throw new Error(`Server response error: ${text}`);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Server response:', data); // Log the response for debugging
+                document.getElementById('aesEncryptedText').value = data.aesEncryptedText || 'No data received';
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                document.getElementById('aesEncryptedText').value = `Error occurred: ${error.message}`;
+            });
+        }
+    </script>
+    
+</body>
+</html>
